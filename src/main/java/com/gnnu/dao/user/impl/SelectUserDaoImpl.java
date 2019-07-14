@@ -6,6 +6,7 @@ import com.gnnu.entity.user.User;
 import com.gnnu.utils.DBUtil;
 
 import javax.sql.rowset.CachedRowSet;
+import java.sql.SQLException;
 
 public class SelectUserDaoImpl implements SelectUserDao {
 
@@ -13,9 +14,15 @@ public class SelectUserDaoImpl implements SelectUserDao {
     private DBUtil dbUtil=new DBUtil();
 
     @Override
-    public CachedRowSet checkUserPassword(User user) {
-        String sql="SELECT uid FROM users where uname=? and upassword=?";
-        cachedRowSet = dbUtil.query(sql,user.getUname(),user.getUpassword());
-        return cachedRowSet;
+    public int SelectUserByPassword(User user)  {
+        String sql="select * from users where uname=? and upassword=?";
+        CachedRowSet cachedRowSet = dbUtil.query(sql, user.getUname(), user.getUpassword());
+        int uid = 0;
+        try {
+            uid = cachedRowSet.getInt("uid");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return uid;
     }
 }

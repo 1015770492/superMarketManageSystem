@@ -11,7 +11,7 @@ public class InsertUserServiceImpl implements InsertUserService {
     @Override
     public boolean save(User user) {
         InsertUserDao insertUserDao=new InsertUserDaoImpl();
-        boolean isok = insertUserDao.save(user);
+        boolean isok = insertUserDao.insertUser(user);
         return isok;
     }
 }

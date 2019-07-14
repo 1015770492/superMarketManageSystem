@@ -11,6 +11,8 @@
     <title>商城首页</title>
 </head>
 <body>
-
+<script language="JavaScript">
+    window.location.href="login.jsp";
+</script>
 </body>
 </html>

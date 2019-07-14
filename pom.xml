@@ -21,6 +21,12 @@
     </build>
 
     <dependencies>
+<!--        MD5加密依赖-->
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.6</version>
+        </dependency>
 <!--        tomcat 依赖-->
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>

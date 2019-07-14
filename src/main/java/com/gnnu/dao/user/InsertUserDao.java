@@ -4,5 +4,5 @@ import com.gnnu.entity.user.User;
 
 public interface InsertUserDao {
 
-    boolean save(User user);
+    boolean insertUser(User user);
 }

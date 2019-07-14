@@ -14,12 +14,7 @@ public class CheckUserServiceImpl implements CheckUserService {
     public int checkUidByPassword(User user) {
         int uid=-1;
         SelectUserDao selectUserDao=new SelectUserDaoImpl();
-        CachedRowSet cachedRowSet = selectUserDao.checkUserPassword(user);
-        try {
-            uid=cachedRowSet.getInt("uid");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        uid = selectUserDao.SelectUserByPassword(user);
         return uid;
     }
 }

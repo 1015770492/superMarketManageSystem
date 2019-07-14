@@ -77,20 +77,18 @@
             background-size: cover;
             font-size: 16px;
         }
-        .form {
-            background: rgba(255, 255, 255, 0.4);
-        }
 
 
     </style>
 </head>
 <body>
+<link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="js/jquery-latest.js"></script>
 <script src="js/bootstrap.min.js"></script>
 
 <div class="container">
-    <div class="col-lg-4 col-md-offset-4">
+    <div class="col-lg-4 col-md-offset-4" style="margin-top: 50px;border:2px #ccc solid;background: rgba(255, 255, 255, 0.4);border-radius:10px;">
         <form action="register.do" class="form" >
             <h3 style="text-align: center;color: #080808" >注册</h3>
             <div class="form-group has-feedback">

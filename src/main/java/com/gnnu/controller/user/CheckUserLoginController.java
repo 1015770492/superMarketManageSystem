@@ -47,12 +47,12 @@ public class CheckUserLoginController extends HttpServlet {
             req.setAttribute("url", url);
 
             //跳转页面
-            req.getRequestDispatcher("loginsuccess.jsp").forward(req, resp);
+            req.getRequestDispatcher("success.jsp").forward(req, resp);
         }else {
             msg="登陆失败！密码不正确或者用户与密码不匹配！";
             req.setAttribute("msg", msg);
             //跳转页面
-            req.getRequestDispatcher("loginfail.jsp").forward(req, resp);
+            req.getRequestDispatcher("fail.jsp").forward(req, resp);
         }
 
     }

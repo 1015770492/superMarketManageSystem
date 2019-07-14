@@ -23,6 +23,7 @@
             padding: 20px;
             padding-left: 40px;
             padding-right: 40px;
+            border-radius:10px;
         }
     </style>
 </head>
