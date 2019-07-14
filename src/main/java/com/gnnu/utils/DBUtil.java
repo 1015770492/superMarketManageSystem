@@ -14,7 +14,7 @@ import javax.sql.rowset.RowSetProvider;
 public class DBUtil {
 
     private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
-    private static final String URL = "jdbc:mysql://localhost:3306/supermarket?characterEncoding=utf-8&?useSSL=false";
+    private static final String URL = "jdbc:mysql://localhost:3306/supermarket?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true ";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "123456";
 
@@ -39,9 +39,7 @@ public class DBUtil {
         try {
             getConnection();
             preparedStatement = connection.prepareStatement(sql);
-
             if (objects != null) {
-
                 for (int i = 0; i < objects.length; i++) {
                     preparedStatement.setObject(i + 1, objects[i]);
                 }
@@ -54,7 +52,6 @@ public class DBUtil {
         }
         return num;
     }
-
     public CachedRowSet query(String sql, Object... objects) {
         try {
             getConnection();
@@ -65,7 +62,6 @@ public class DBUtil {
                 }
             }
             resultSet = preparedStatement.executeQuery();
-
             RowSetFactory factory= RowSetProvider.newFactory();
             cachedRowSet=factory.createCachedRowSet();
             cachedRowSet.populate(resultSet);

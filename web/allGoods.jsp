@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*"%>
 <%@page import="java.util.List"%>
-<%@ page import="com.gnnu.entity.Goods" %>
+<%@ page import="com.gnnu.entity.goods.Goods" %>
 <!DOCTYPE html>
 <html>
 <head>
